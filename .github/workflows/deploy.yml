@@ -28,9 +28,12 @@ jobs:
       # Step 4: Wait for the Docker Container to Start
       - name: Wait for the container to be ready
         run: sleep 10
-
-
-      # Step 4: Deploy to GitHub Pages
+      
+      # Step 5: Verify Running Container
+      - name: Verify Running Container
+        run: docker ps
+      
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
